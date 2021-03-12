@@ -21,9 +21,9 @@ function App() {
     .catch(error => alert(error));
   }, []);
 
-  const handleChange = e => {
-    setSearch(e.target.value)
-  }
+  // const handleChange = e => {
+  //   setSearch(e.target.value)
+  // }
 
   const filteredCoins = coins.filter(coin => 
     coin.name.toLowerCase().includes(search.toLowerCase())
@@ -42,13 +42,11 @@ function App() {
       {filteredCoins.map(coin => {
         return <Coin 
         key={coin.id} 
-        name={coin.name}
-        price={coin.current_price} 
-        symbol={coin.symbol}
-        marketcap={coin.total_volume}
-        volume={coin.market_cap}
+        name={coin.name} 
         image={coin.image}
-        priceChange={coin.price_change_percentage_24h}
+        symbol={coin.symbol}
+        volume={coin.market_cap}
+        price={coin.current_price}
         />;
       })}
 
